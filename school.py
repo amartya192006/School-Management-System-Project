@@ -44,4 +44,28 @@ def delete_student():
     else:
         print("Student deleted successfully.")
 
-  def main(): #main body of the program -----1
+def main(): #main body of the program -----1
+  def main():
+    while True:
+        print("\n--- School Management System ---")
+        print("1. Add Student")
+        print("2. View Students")
+        print("3. Edit Student")
+        print("4. Delete Student")
+        print("5. Exit")
+
+        choice = input("Enter choice: ")
+
+        if choice == "1":
+            add_student()
+        elif choice == "2":
+            view_students()
+        elif choice == "3":
+            edit_student()
+        elif choice == "4":
+            delete_student()
+        elif choice == "5":
+            print("Exiting...")
+            break
+        else:
+            print("Invalid choice.")
