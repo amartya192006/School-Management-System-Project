@@ -20,3 +20,20 @@ try: #error handeling
   print("Student Added Suscessfully.")
 except:
   print("Student already exist with this Roll No.")
+
+def edit_student(): #2nd function 
+  roll = int(input("Enter Roll Number to edit: "))
+  name = input("Enter New Name: ")
+  age = int(input("Enter New Age: "))
+  grade = input("Enter New Grade: ")
+  query= """
+  UPDATE STUDENTS SET name=%s, age=%s, grade=%s WHERE roll=%s """
+  cursor.execute(query,(name,age,grade,roll))
+  db.commit()
+  if cursor.rowcount ==0:
+    print("STUDENT LIST IS EMPTY")
+  else:
+    print("Student Details Updated")
+
+
+
