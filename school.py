@@ -34,6 +34,14 @@ def edit_student(): #2nd function
     print("STUDENT LIST IS EMPTY")
   else:
     print("Student Details Updated")
+def delete_student():
+    roll = int(input("Enter Roll Number to delete: "))
+    cursor.execute("DELETE FROM STUDENTS WHERE roll=%s", (roll,))
+    db.commit()
 
+    if cursor.rowcount == 0:
+        print("Student not found.")
+    else:
+        print("Student deleted successfully.")
 
-
+  def main(): #main body of the program -----1
